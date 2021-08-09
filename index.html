@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<script>console.log("%c warning ⚠ Using console may be destructive Do not copy/paste the code you don't know ", "color:yellow; background:black; font-size: 30px;");
+	</script>
+  <script type="text/javascript" src="rivescript.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <!-- <script type="text/javascript" src="p5.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="p5.speech.js"> </script>
+  <script src="faction.js"> </script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title> advanced rivescript chatbox </title>
+  <style type="text/css">
+		.context-menu {
+			position: absolute;
+			text-align: center;
+			background: rgb(255, 255, 255);
+			border: black;
+		}
+
+		.context-menu ul {
+			padding: 0px;
+			margin: 0px;
+			min-width: 150px;
+			list-style: none;
+		}
+
+		.context-menu ul li {
+			padding-bottom: 7px;
+			padding-top: 7px;
+			border: 1px solid black;
+		}
+
+		.context-menu ul li a {
+			text-decoration: none;
+			color: black;
+		}
+
+		.context-menu ul li:hover {
+			background: white;
+		}
+	</style>
+	<script src="soundmanager2.js"></script>
+</head>
+
+<body>
+  <p class = "stick">
+	<fom>
+    <input maxlength="120" minlength="2" id="user_input" placeholder="send message to bot" class = "searchbox" data-id="turns your theme to radial mode"> </input>
+	<button id="submit">submit</button>
+</fom>
+  </p>
+  <script>
+  $('#submit').click(function () {
+    $('#user_input').val('');
+  });
+  $(document).on("keypress", function(e){
+    if(e.which == 13){
+      // used to reset the value of the input search box
+    //  $('#user_input').val('');
+    }
+    });
+
+    // disable right click
+    $(document).on({
+    "contextmenu": function(e) {
+       // Stop the context menu
+        e.preventDefault();
+        // createP("Hi");
+    }
+});
+  </script>
+  <!-- Smartsupp Live Chat script
+<script type="text/javascript">
+	var _smartsupp = _smartsupp || {};
+	_smartsupp.key = '0f77eb29085dc4799742d7ec0a49d337b7a53f1a';
+	window.smartsupp||(function(d) {
+	  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+	  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+	  c.type='text/javascript';c.charset='utf-8';c.async=true;
+	  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+	})(document);
+	</script> -->
+  <img id = "Eureka" draggable="false" src = "Eureka.png" width="10%" draggable="false"></img>
+
+  <script src="sketch.js"></script>
+  <!-- making own right click elements -->
+  <!-- foo is here a replacement of a  -->
+  <div id="contextMenu" class="context-menu" style="display: none"> 
+	<ul class="menu">
+		<li class="paste" data-id="Move to terms"><foo><a href="licence.html" target="_blank"><i class="fa fa-paste" aria-hidden="true"></i> Move to</a></foo></li> 
+		<li class="download" data-id="refresh" onclick="reload();"><foo href="#"><i class="fa fa-refresh" aria-hidden="true"></i> refresh</foo></li>
+		<li class="" onclick="fancyMode();" data-id="turns your theme to radial mode"><foo><i class = "fa fa-themeisle" aria-hidden="true"></i> fancy radial</foo></li> 
+		<li class="" onclick="randomTheme();" data-id="applies random theme "><foo><i class = "fa fa-themeisle" aria-hidden="true"></i> random accent</foo></li> 
+		<li class="" onclick="singMode();" data-id="rocks with you"><foo><i class = "fa fa-american-sign-language-interpreting" aria-hidden="true"></i> rock mode</foo></li> 
+		<!-- <li class="trash"><foo href="#"><i class="fa fa-trash" aria-hidden="true"></i> Delete</foo></li>  -->
+	</ul> 
+</div>
+	<script>
+		document.onclick = hideMenu; 
+		document.oncontextmenu = rightClick;
+		function hideMenu() {
+			 document.getElementById("contextMenu").style.display = "none" 
+		 } 
+		 function fancyMode(){
+			 document.body.classList.toggle("fancy-mode");
+		 }
+		 function randomTheme(){
+	// Array containing colors
+	var colors = ['#00A852','#7EA852',"#BDA852","#E7A852","#FFA852","#FFD452","#FFE352","#FFE300","#FFE382","#FFE398","#FFE3C6","#FFE3E5","#FF00FF",
+				'#ff0000', '#00ff00', '#0000ff',"#0000FF","#00CAFF","#00FBFF","#590d01",
+				'#ff3333', '#ffff00', '#ff6600'
+			];
+			
+			// selecting random color
+			var random_color = colors[Math.floor(
+					Math.random() * colors.length)];
+			
+			document.body.style.background = random_color;			 
+		 }
+	   
+		 function rightClick(e) { 
+			 e.preventDefault(); 
+	   
+			 if (document.getElementById("contextMenu") .style.display == "block"){ 
+				 hideMenu(); 
+			 }else{ 
+				 var menu = document.getElementById("contextMenu")
+				 menu.style.display = 'block'; 
+				 menu.style.left = e.pageX + "px"; 
+				 menu.style.top = e.pageY + "px"; 
+			 } 
+		 } 
+	 </script>
+</body>
+</html>

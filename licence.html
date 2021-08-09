@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> terms </title>
+  <script type="text/javascript" src="rivescript.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <!-- <script type="text/javascript" src="p5.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="p5.speech.js"> </script>
+  <script src="faction.js"> </script>
+  <script src="prevent.js"> </script>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(1,143,183,1) 0%, rgba(1,154,195,1) 35%, rgba(1,154,195,1) 40%, rgba(9,9,121,1) 53%, rgba(0,170,211,1) 66%, rgba(0,212,255,1) 100%);
+        }
+        
+button{
+  background-color: rgb(0, 72, 255);
+  border: none;
+  color: black;
+  padding: 10px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px;
+  cursor: pointer;
+  border-radius: 5px; 
+}
+
+button:hover{
+  background-color: rgb(33, 79, 196);
+  color: black;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+::selection{
+    color: rgb(56, 45, 45);
+    -webkit-background-composite: blur(5px);
+}
+        </style>
+        <script>
+            function read(){
+  read = new p5.Speech();
+  read.setPitch(1.9);
+  var terms = "What’s covered in these terms We know it’s tempting to skip these Terms of Service, but it’s important to establish what you can expect from us as you use this chatbot services, and what we expect from you. These Terms of Service reflect the way this business works, the laws that apply to us, and certain things we’ve always believed to be true.Permission is hereby granted to use it, free of charge, to any person using THIS SOFTWARE AND WE REQUEST YOU TO FOLLOW THE FOLLOWING MEASURES:-No one is allowed to use/share/copy/see the code until shared directly by the developer. Do not use, copy, modify, merge, publish, distribute, sublicense, and/or sell the copy of this software or the software itself.This site is noot embedable so do not embed or iframe/frame it. THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE FUTURE New updates shall be given here. notice may be/ may not be given."
+  read.speak(terms.toLowerCase());
+}
+</script>
+</head>
+
+<body>
+<h1>What’s covered in these terms</h1> <button onclick="read()"> read aloud </button>
+    <h3> We know it’s tempting to skip these Terms of Service, but it’s important to establish what you can expect from us as you use this chatbot services, and what we expect from you. </h3>
+    <h3> These Terms of Service reflect the way this business works, the laws that apply to us, and certain things we’ve always believed to be true.</h3>
+    <p> <i> <b>For developers:- </b></i> This site uses some open source projects like p5js, soundmanager2.js and rivescript.js </p>
+    <p> Permission is hereby granted to use it, free of charge, to any person using THIS SOFTWARE AND WE REQUEST YOU TO FOLLOW THE FOLLOWING MEASURES:-</p>
+    <ul>
+        <li> No one is allowed to use/share/copy/see the code until shared directly by the developer. </li>
+        <li> Do not use, copy, modify, merge, publish, distribute, sublicense, and/or sell the <b>copy of this software</b> or <b>the software itself.</b> </li>
+        <li> This site is noot embedable so do not embed or iframe/frame it. </li>
+    </ul>
+    <p> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+         AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE FUTURE </p>
+ <h5> New updates shall be given here. Notice may be/ may not be given. </h5> 
+
+
+ 
+</body>
+</html>
