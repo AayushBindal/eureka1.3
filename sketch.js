@@ -87,15 +87,10 @@ function setup() {
   // speechRec.start(continuous, interim);
 
   bot = new RiveScript();
-  if(navigator.userAgent.toLowerCase().match(/mobile/i)) {
     console.log("not a computer");
     let button2 = select('#submit');
-    button2.addClass("button2");
- }
-   else{
-  let button = select('#submit');
-  }
 
+  let button = select('#submit');
   textInput = select('#user_input');
   textOutput = select('#output');
   loadBot();
