@@ -17,11 +17,17 @@ async function chat() {
   let txt = textInput.value();
   reply = await bot.reply('local-user', txt);
   searchValue = textInput.value();
+  if(navigator.userAgent.toLowerCase().match(/mobile/i)) {
+     console.log("not a computer");
+  }
+  else{
   var s = createP(searchValue);
   s.addClass("userchat");
   speech.speak(reply);
   botch = createP(reply).addClass('botchat');
   createA("https://www.google.com/search?q="+searchValue+"&cvid=ba194626fbac4114be33953f19549c7a&aqs=edge.0.0l7.579j0j1&pglt=931&FORM=ANNTA1&PC=HCTS","my I search it for you","_blank");
+    console.log("A computer");
+}
   
   botch.id="botchatId";
   console.log(botch.id);
@@ -60,7 +66,7 @@ async function chat() {
     else if(reply.toLowerCase()===("let's learn together" || "i only know abut this.")){
       createP("");
         createIframe("https://aayushbindal.github.io/website/");
-        console.log("");
+        console.log("hahahaash");
     }
   var w = window.innerWidth;
   var h = window.innerHeight;
@@ -81,9 +87,6 @@ function setup() {
   // speechRec.start(continuous, interim);
 
   bot = new RiveScript();
-    console.log("not a computer");
-    let button2 = select('#submit');
-
   let button = select('#submit');
   textInput = select('#user_input');
   textOutput = select('#output');
